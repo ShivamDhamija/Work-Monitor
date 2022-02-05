@@ -1,0 +1,31 @@
+<form action="/addInWorkData" method="post">        
+    <label for="">Enter what tak you want to comlete</label>
+    <br>
+    <input type="text" name="taskName" id="" placeholder="Task">
+    <br>
+    <label for="">Date by which to be completed</label>
+    <br>
+    <% date=new Date().getDate();month=new Date().getMonth()+1;year=new Date().getFullYear();%>
+    <%noOfDays=new Date(year, month, 0).getDate();%>
+    <%-include("range",{lable:"day",text:"",start:1,end:noOfDays ,select:date})%>
+    <%-include("range",{lable:"month",text:"",start:1,end:12 ,select:month})%>
+    <%-include("range",{lable:"year",text:"",start:year,end:year+15 ,select:year})%>
+    
+    <br>
+    <label for="">Do you want range for your task</label>
+    <br>    
+        <input type="radio" name="rangeChoice" id="yesDailyRadio" value="yes">
+        <label for="">Yes</label>
+        <input type="radio" name="rangeChoice" id="noDailyRadio" value="no" checked="checked">
+        <label for="">No</label>
+    
+    <br>
+    <div id="yesRangeChoice" style="display: none;">
+        <input type="number" name="rangeValue" id="" placeholder="Enter the range" value=0>
+    </div>
+    
+    <br>
+    <input type="submit" value="Make new task">
+</form>
+
+<script src="frontJsFile/dailyNewList.js"></script>

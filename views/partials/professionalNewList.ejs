@@ -1,0 +1,56 @@
+<div class="change">
+<form action="/addInWorkData" method="post">
+    <label for="">Enter what tak you want to comlete</label>
+    <input type="text" name="taskName" id="" placeholder="Task">
+    <br>
+    <label for="">Reporting Head Name</label>
+    <input type="text" name="reportingHeadName" id="" placeholder="Name of Repoting Head">
+    <br>
+    <div style="margin-top: 5%;">
+        <label for="" >Date by which to be completed</label>
+        <div class="select">        
+            <% date=new Date().getDate();month=new Date().getMonth()+1;year=new Date().getFullYear();%>
+            <%noOfDays=new Date(year, month, 0).getDate();%>
+            <%-include("range",{lable:"day",text:"Date:",start:1,end:noOfDays ,select:date})%>
+            <%-include("range",{lable:"month",text:"Month:",start:1,end:12 ,select:month})%>
+            <%-include("range",{lable:"year",text:"Year:",start:year,end:year+15 ,select:year})%>
+        </div>
+    </div>
+    <br>
+    <div style="margin-top: 5%;">
+        <label for="">Time by which to be completed</label>
+        <div class="select">        
+            <%-include("range",{lable:"hour",text:"Hours:",start:1,end:24 ,select:new Date().getHours()})%>
+            <%-include("range",{lable:"minute",text:"Minutes:",start:0,end:59 ,select:new Date().getMinutes()})%>
+        </div>
+    </div>
+    
+    <br><br><br>
+    <label for="">Do you want sub-task List</label>
+    <input class="radio" type="radio" name="subChoice" id="yesProfessionalRadio" value="yes">
+    <label class="radio" for="yesProfessionalRadio">Yes</label>
+    &nbsp;
+    <input class="radio" type="radio" name="subChoice" id="noProfessionalRadio" value="no" checked="checked">
+    <label class="radio" for="noProfessionalRadio">No</label>
+    
+    <br>
+    <div id="yesSubChoice" style="display: none;">
+        <!--just for checking working-->
+        <input type="text" id="noOfSubTask" value=1 style="display: none;">
+        <div id="yesSubChoiceDiv">
+            <div>  
+                <br>
+                <label for="">Enter name of sub-task : </label>
+                <input type="text" name="subTask1" id="" placeholder="Enter name of sub-task ">
+                
+            </div>
+        </div>
+            <button id="newSubTask" >want more sub-task</button>
+        
+    </div>
+    
+    <br>
+    <button class="button" type="submit" >Make new task</button>
+</form>
+</div>
+<script src="frontJsFile/professionalNewList.js"></script>

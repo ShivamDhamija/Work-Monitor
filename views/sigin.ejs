@@ -1,0 +1,36 @@
+<%- include("partials/header") %>
+<body class="section1">
+<h1 class="heading">Check List</h1>
+<!--header-->
+<br><br><br>
+<div class="change">
+    <form action="/sigin" method="post">
+        <label for="">Name</label>
+        <input type="text" name="name" id="" placeholder="Name">
+        <br>
+        <label for="">User-Name</label>
+        <input type="text" name="userName" id="" placeholder="User-Name">
+        <br>
+        <label for="">User-Email</label>
+        <input type="email" name="userEmail" id="" placeholder="Email">
+        <br>
+        <label for="">User-Password</label>
+        <input type="password" name="userPassword" id="" placeholder="Password">
+        <br>
+        <label for="">Confirm-Password</label>
+        <input type="password" name="userConfirmPassord" id="" placeholder="Confirm-Password">
+        <br><br><br>
+        <label class="radio"for="">For what purpose do you
+            want to use Check-List</label>
+        <br>
+        <input class="radio" type="radio" name="userType" id="daily" value="daily" checked="checked">
+        <label class="radio"for="daily">Daily-Work</label>
+        
+        <input class="radio"type="radio" name="userType" id="professional" value="professional">
+        <label class="radio"for="professional">Professional-Work</label>
+        <br>
+        <button class="button" type="submit" >sign-In</button>
+    </form>
+    <p>Already existing user <a href="/">log-in</a></p>
+</div>
+<!--footer-->

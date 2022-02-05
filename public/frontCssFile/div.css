@@ -1,0 +1,117 @@
+div.change{
+  text-align: center;
+    background-color: #FFFADE;
+background-image: url("https://www.transparenttextures.com/patterns/checkered-light-emboss.png");
+box-shadow: 1.5px 1.5px  #FFFADE inset,2px 2px 2px #FFFADE;
+border-radius: 10px;
+min-height: 300px;
+min-width: 500px;
+max-width: 700px;
+margin:auto;
+margin-bottom: 100px ;
+padding: 10px;
+
+}
+div.center{
+  text-align: center;
+  margin:auto;
+}
+label{
+    color: #7F0483;
+    height: 25px;
+    font-size: large;
+    font-weight: bold;
+    width: 45%;
+    margin: 5%;
+}
+input,select,div.select{
+  padding: 2px 8px;
+    color: #7F0483;
+    background-color: #FFFADE;
+    border: 0;
+    border-radius: 5px;
+    height: 25px;
+    font-size: medium;
+    max-width: 45%;
+    margin: 5%;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+input:focus,select:focus {
+   background-color:#C3FCF1 ;
+    outline: none;
+  }
+
+label.radio{
+  margin: 10px;
+  width: 40px;
+}
+input.radio{
+  margin: 1px 15px 0 0;
+  width:0;
+}
+input[type='radio']:after {
+  font-size: 20px;
+  margin: 0 5px 0 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 15px;
+  top: 7px;
+  left: 0px;
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border:0;
+}
+
+input[type='radio']:checked:after {
+  font-size: 20px;
+  margin: 0 5px 0 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 15px;
+  top: 7px;
+  left: 0px;
+  position: relative;
+  background-color: #7F0483;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 0;
+  
+}
+select.select,label.select{
+  width: 60px;
+  margin: 0 0 0 5px;
+  padding: 0 ;
+}
+div.select{
+  display:inline;
+  margin: 5% 0;
+}
+p{
+ color: #7F0483;
+}
+a:link {
+    text-decoration: none;   
+    color: #00EAD3;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: #FF449F;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: #B5EAEA;
+  }
+  
+  a:active {
+    text-decoration: underline;
+  }
+a{
+    margin: 5px,20px,0,0;
+}

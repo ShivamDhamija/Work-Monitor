@@ -1,0 +1,12 @@
+<label class="select"for="<%=lable%>"><%=text%></label>
+<select class="select" id="<%=lable%>" name="<%=lable%>">
+    <% var s=start%> 
+    <% var e= end%>
+    <%for(i=s;i<=e;i++){%>
+        <% if(i===parseInt(select)){%>
+        <option value="<%=i%>" selected ><%=i%></option>
+        <%} else{%>
+        <option value="<%=i%>" ><%=i%></option>
+        <%}%>
+    <%}%>
+  </select>

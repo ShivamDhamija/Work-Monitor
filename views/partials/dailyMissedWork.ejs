@@ -1,0 +1,21 @@
+<%if(listOfWork.length===0){%>
+    <h1>You Have Not Missed Any Work Yet Good Work</h1>
+<%}else{%>
+    
+    <%Object.values(listOfWork).forEach(function(val){%>
+    <div id="<%=val.taskName%>">
+    <br>
+    <label for="">Task</label>
+    <br>
+    <label for=""><%=val.taskName%></label>
+    <br>
+    <label for="">To what date it's supposed to be completed</label>
+    <br>
+    <label for=""><%=val.taskDate%></label>
+    <br>
+    <label for="">How many days had passed dealine</label>
+    <br>
+    <label for=""><%=val.taskPassedDate%></label>
+    </div>
+    <%})%>
+<%}%>

@@ -1,0 +1,46 @@
+<%if(Object.keys(list).length===0){%>
+    <h1>You Have No Work To Do Let's Putt Some Work!</h1>
+<%}else{ let allCompleted=true;%>    
+    <%Object.values(list).map(function(val){%>
+        <%if(val.completed===false){ allCompleted=false;%>
+        <form action="" method="post">      
+            <div id="<%=val.taskName%>">
+                <br>
+                <label for="">Name of task</label>
+                <br>
+                <label for=""><%=val.taskName%></label>
+                <br>
+                <label for="">Name of repoting Head</label>
+                <br>
+                <label for=""><%=val.reportingHeadName%></label>
+                <br>
+                <label for="">Time by wich to be completes</label>
+                <br>
+                <label for=""><%=val.hour%></label> 
+                <label for=""><%=val.minute%></label>
+                <br>
+                <label for="">Date by wich to be completes</label>
+                <br>
+                <label for=""><%=val.taskDate%></label>
+                <%if(val.subChoice==="yes"){%>
+                    <div id="">
+                        <%Object.entries(val.noOfSubTask).map(function([key, value]) {%>
+                            <br>
+                            <label for="">name of <%=key%> </label>
+                            <br>
+                            <label for=""><%=value%></label>
+                        <%})%>
+                    </div>
+                <%}%>                    
+                <br>
+                <input type="text" name="keyOfTask" value=<%=val.id%> style="display:none" >  
+                <button id="done" name="" formaction="/markCompleted">Completed Task</button>
+                <button id="delete" name="" formaction="/deleteFromData">Delet Task</button>
+            </div>
+        </form>
+        <%}%>
+    <%})%>
+    <%if(allCompleted){%>
+        <h1>You Have No Work To Do Let's Putt Some Work!</h1>
+    <%}%>
+<%}%> 

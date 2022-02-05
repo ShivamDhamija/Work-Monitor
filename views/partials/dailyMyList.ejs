@@ -1,0 +1,37 @@
+<%if(Object.keys(list).length===0){%>
+    <h1>You Have No Work To Do Let's Putt Some Work!</h1>
+<%}else{ let allCompleted=true;%>    
+    <%Object.values(list).map(function(val){%>
+        <%if(val.completed===false){ allCompleted=false;%>
+            <form action="" method="post">
+                <div id="<%=val.taskName%>" >
+                    <br>
+                    <label for="">Name of Task</label>
+                    <br>
+                    <label for=""><%=val.taskName%></label>
+                    <br>
+                    <label for="">Date by wich to be completes</label>
+                    <br>
+                    <label for=""><%=val.taskDate%></label>
+                    <br>
+                    <%if(val.rangeChoice==="yes"){%>
+                        <div id="">
+                            <label for="">Range of work completed</label>
+                            <br>
+                            <%-include("range",{lable:"workRange",text:"",start:0,end:val.rangeValue ,select:val.currentSelectRange})%>
+                            <br>
+                            <button formaction="/markChange"> updat range</button>
+                            <br>
+                        </div>
+                    <%}%>
+                    <input type="text" name="keyOfTask" value=<%=val.id%> style="display:none" >  
+                    <button id="done" name="" formaction="/markCompleted">Completed Task</button>
+                    <button id="delete" name="" formaction="/deleteFromData">Delet Task</button>
+                </div>
+            </form>
+        <%}%>
+    <%})%>
+    <%if(allCompleted){%>
+        <h1>You Have No Work To Do Let's Putt Some Work!</h1>
+    <%}%>
+<%}%>
